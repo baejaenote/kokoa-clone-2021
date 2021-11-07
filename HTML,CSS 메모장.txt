@@ -1,0 +1,191 @@
+HTML은 뼈대야
+CSS는 디자인 스타일
+
+tag
+attribute
+attributevalue
+form-input
+label
+for
+id = unique identifier 고유의 값이여햐한다
+
+div (대신에 sementic tag들을 사용하자) 
+div는 "box"이고 옆에 아무 것도 올 수 없다 ->block
+span,link는 올 수 있다 -> inline =in the same line
+
+block: div, address, blockquote, 
+inline: span, link, code, image
+
+display로 block-inline 서로를 바꿀 수 있다.
+
+inline은 height, width가 없고
+block은 있다
+
+block이 아닌 것만 기억하자
+나머지는 대략 block인지 아닌지 감이 온다
+
+header
+main
+footer
+navigation
+sidebar/aside
+
+<span> is for a short text
+<p> is for a paragraph (long text)
+
+<link href="style.css" rel="stylesheet" />
+
+box has three properties: margin, borderm padding
+
+margin은 box의 border(경계)의 바깥에 있는 공간
+padding은 border로부터 안쪽
+border는 박스의 경계선이고 inline과 block 모두에 적용됌
+
+margin은 좌우만 적용이 되고 상하는 안 된다!
+
+collapsing margins의 개념에 대해
+
+div를 나누는 방법은 id
+<div id=" ">
+
+#tomato = id = "tomato"
+.tomato = class = "tomato"
+
+class 
+btn (버튼)
+
+inline-block은 좋지 않다 왜냐하면
+Responsive Design(반응형 디자인)을 지원하지 않기 때문에
+대신에 flexbox
+
+vh= viewport height
+
+row: 열,수평
+column: 행,수직
+
+flexbox: 박스를 배열하는데 유용함  -->초심자는 간단한거만 체크하기
+flex has two axis: main axis, cross axis
+justify-content은 main axis (수평)로 움직이고
+align-items는 cross axis(수직)으로 움직인다
+
+main axis = horizontal (수평), because flex-direction is row(수평) (디폴트로)
+cross axis = vertical (수직)
+
+flex-direction이 column이면 
+main axis become vertical(수직): justify-content가 수직으로 바뀌고
+cross axis become horizontal(수평): align-items는 수평으로 바뀐다
+
+flex-wrap: 
+wrap은 사이즈를 줄이면 밑으로 오고,
+nowrap은 옆으로 붙는다
+wrap-reverse는 잘 안 쓰지만 유용
+
+flex-direction:
+row-reverse는 잘 안 쓰지만 유용
+
+position: fixed;  --->스크롤을 내리면 박스도 따라간다
+positon: static -->레이아웃이 박스를 처음 위치하는 곳에 두는 것
+positon: relative ---->박스 위치를 조금 옮길수 있는 유용한 것
+positon: absolute 
+
+relative를 쓸 때: left, top, bottom, right 이용해서 상하좌우로 움직인다
+relative, absolute의 포지션을 이해하자
+부모를 relative하고 자식을 absolute 
+
+#: 해시태그는 id
+. : 점을 쓰면 class
+
+pseudo selector 사용법:
+
+div :last-child
+div :first-child
+
+새로운 id, class를 만드는 것 보다 
+pseudo selector를 사용하는게 더 간단하다
+
+span: nth-child(2) 
+span: nth-child(4) : 두번째, 네번째 span을 다르게 적용시키는 법
+
+span: nth-child(even) : 짝수번호대만 바꿔서 다르게 적용시킬때 유용함 
+even = 짝수
+
+span: nth-child(2n)
+span: nth-child(2n+1)
+
+text-decoration: underline  밑줄 추가
+
+div > span : div 바로 안에 있는 span만 적용됌 (바로 밑 자식)
+p + span   : p 바로 다음에 오는 span에 적용 (안에 있는게 아니라)
+p ~ span   : p 바로 다음일 필요는 없지만 span에 적용
+
+attribute : 대괄호 안에 써서 적용
+input[placeholder~="name"] : name을 포함하는 모든 것을 적용 
+
+States: active, hover, focus, visited : 이 부분 복습 필요함 어려움
+
+컬러는 변수에 넣고 중복 없이 작업하는 방법: Custom properties(CSS variables)
+:roof{
+    --main-color: #fcce00;    
+    --default-border: 1px solid var(--main-color);
+
+color: var(--main-color); 
+border: var(--default-border);
+
+
+애니메이션 효과
+transition: all 1s  : 마우스 갖다대면 색상이 변함 
+(root에 있어야하고 state에 있으면 안됌)
+
+linear, ease-in, ease-in-out, ease 변하는 속도를 다양하게 설정할수있다
+
+transition: transform 2s ease-in-out;
+transform: rotateX(360deg) scale(0.5);
+
+Animation 애니메이션 만드는 방법
+
+@keyframes Name{
+	from{
+		transform: rotateY(0);
+	}
+	to{
+		transform: rotateY(360deg);
+
+media query 배움
+min-device-width
+max-device-width
+orientation: landscape, portrait
+
+git       : 파일들을 주시하면서 관리해주는 도구이고
+github  : git의 변경내역을 볼 수 있는 사이트
+
+BEM: Block Element Modifier
+
+form은 아주 중요한 2가지 속성(attribute)을 가지고 있다: action, method
+action은 어떤 페이지로 data를 보낼건지 지정할 수 있다.
+method는 2가지 방식 중 하나를 쓸 수 있다. POST와 GET
+POST는 백엔드 서버에 정보를 전송하는 방식이고
+GET은 보안에 취약함
+
+Border Box 설명하는거 이해하기 (6.12강의)
+
+justify-content: space-between;
+align-items: center;             --->이 두개는 자주 쓰이는 조합임
+
+absolute 적용된 children은 
+relative 적용된 father가 필요하다
+
+position: absolute, relative 이해하기
+
+z-index는 layer같은거라서 1부터 10까지 있음
+숫자가 작을수록 낮은 layer, 클수록 위의 layer
+fixed, absolute position에 이용 가능.
+
+마지막 세션 animation
+
+@Keyframes 이름 {
+	from{ }
+	to{ }
+
+will-change
+
+focus-within
